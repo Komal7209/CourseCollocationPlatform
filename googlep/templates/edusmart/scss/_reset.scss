@@ -1,0 +1,75 @@
+body {
+    line-height: 25px;
+    font-size: 16px;
+    font-family: $primary-font;
+    font-weight: 600;
+    color: $text-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $title-font;
+    font-weight: 600;
+    color: $title-color;
+}
+
+.list {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        outline: none;
+    }
+}
+
+.row.m0 {
+    margin: 0px;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.mb-15 {
+    margin-bottom: 15px;
+}
+.mt-10 {
+    margin-top: 10px;
+}
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mt-25 {
+    margin-top: 25px;
+}
+
+.white_bg {
+    background: #fff !important;
+}
+
+.mt-100 {
+    margin-top: 100px;
+    @media (max-width: 991px) {
+        margin-top: 0px;
+    }
+}
+
+.mt--100 {
+    margin-top: -100px;
+    @media (max-width: 991px) {
+        margin-top: 0px;
+    }
+}

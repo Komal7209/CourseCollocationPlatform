@@ -1,0 +1,126 @@
+.section_gap {
+    padding: 120px 0;
+    @media (max-width: 991px) {
+        padding: 60px 0;
+    }
+}
+
+.section_gap_top {
+    padding-top: 120px;
+    @media (max-width: 991px) {
+        padding-top: 60px;
+    }
+}
+
+.section_gap_bottom {
+    padding-bottom: 120px;
+    @media (max-width: 991px) {
+        padding-bottom: 60px;
+    }
+}
+
+/* Main Title Area css
+============================================================================================ */
+
+.main_title {
+    text-align: center;
+    margin-bottom: 75px;
+    @media (max-width: 991px) {
+        margin-bottom: 40px;
+    }
+    h2 {
+        font-size: 36px;
+        line-height: 30px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        @media (max-width: 575px) {
+			font-size: 30px;
+			margin-bottom: 10px;
+		}
+    }
+    p {
+        font-size: 16px;
+        margin-bottom: 0px;
+        max-width: 570px;
+        font-weight: 300;
+        margin: auto;
+    }
+}
+
+.lite_bg{
+    background: #f9f9f9;
+}
+
+/* End Main Title Area css
+============================================================================================ */
+
+/* Start Gradient Area css
+============================================================================================ */
+
+.gradient-bg {
+    @include gradient(90deg, $primary-color 0%, $primary-color2 100%);
+}
+
+.gradient-bg2 {
+    @include gradient(90deg, #e94086 0%, #e5925a 100%);
+}
+
+.gradient-bg3 {
+    @include gradient(90deg, #7349cc 0%, #e163e4 100%);
+}
+
+.gradient-color {
+	@include gradient(90deg, $primary-color 0%, $primary-color2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* End Gradient Area css
+============================================================================================ */
+
+/* Start Buttons Area css
+============================================================================================ */
+
+.primary-btn {
+	display: inline-block;
+	@include gradient2(to right, $primary-color 0%, $primary-color2 51%, $primary-color 100%);
+    background-size: 200% auto;
+    padding: 0px 38px;
+    color: #fff;
+    font-family: $title-font;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 50px;
+    border-radius: 0px;
+    outline: none !important;
+    box-shadow: 0px 20px 50px rgba(0, 175, 224, 0.3);
+    text-align: center;
+    cursor: pointer;
+    @include transition;
+    &:hover {
+        background-position: right center;
+        color: #fff;
+        box-shadow: none;
+    }
+}
+
+/* End Buttons Area css
+============================================================================================ */
+
+/* Start Overlay css
+============================================================================================ */
+.overlay{
+    position: relative;
+}
+.overlay:after{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    content: "";
+    z-index: -1;
+}
+
+/* End Overlay css
+============================================================================================ */

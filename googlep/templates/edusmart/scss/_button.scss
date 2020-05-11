@@ -1,0 +1,38 @@
+/* Main Button Area css
+============================================================================================ */.white_bg_btn{
+	background: #fff;
+	display: inline-block;
+	color: $title-color;
+	line-height: 40px;
+	padding: 0px 28px;
+	font-size: 14px;
+	font-family: $primary-font;
+	font-weight: 500;
+	text-transform: uppercase;
+	@include transition;
+	border: none;
+	&:hover{
+		background: $primary-color;
+		color: #fff;
+	}
+}
+.blog_btn{
+	border: 1px solid #eeeeee;
+	background: #f9f9ff;
+	padding: 0px 32px;
+	font-size: 13px;
+	font-weight: 500;
+	font-family: $primary-font;
+	color: $title-color;
+	line-height: 34px;
+	display: inline-block;
+	&:hover{
+		@extend .gradient-bg;
+		border-color: $primary-color;
+		color: #fff;
+	}
+}
+
+
+/* End Main Button Area css
+============================================================================================ */

@@ -1,0 +1,669 @@
+/* Start Features Area css
+============================================================================================ */
+
+.feature_area {
+  margin-top: -37em;
+  @media (max-width: 991px) {
+    margin-top: 60px;
+  }
+}
+
+.single_feature {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  padding: 40px;
+  @media (max-width: 480px) {
+    padding: 40px 20px;
+  }
+  &:nth-child(1) {
+    @extend .gradient-bg2;
+    margin-bottom: 30px;
+  }
+  &:nth-child(2) {
+    @extend .gradient-bg3;
+    margin-bottom: 30px;
+  }
+  &:nth-child(3) {
+    @extend .gradient-bg;
+  }
+  .icon {
+    margin-right: 20px;
+    span {
+      font-size: 30px;
+    }
+  }
+  h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #ffffff;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+/* End Features Area css
+============================================================================================ */
+
+/* Start Department Area css
+============================================================================================ */
+
+.department_area {
+}
+
+.dpmt_courses {
+}
+
+.single_department {
+  background: #f9f9f9;
+  padding: 40px 30px;
+  margin-bottom: 30px;
+  @include transition();
+  img {
+    @include transition();
+  }
+  h4 {
+    margin-top: 20px;
+    margin-bottom: 0;
+    color: #000000;
+    @include transition();
+  }
+  &:hover {
+    @extend .gradient-bg;
+    box-shadow: 0px 20px 50px rgba(0, 175, 224, 0.3);
+    img {
+      @include filter(brightness(0) invert(1));
+    }
+    h4 {
+      color: #ffffff;
+    }
+  }
+}
+
+.dpmt_right {
+  h1 {
+    font-size: 42px;
+    margin-bottom: 25px;
+    @media (max-width: 575px) {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+  }
+  .primary-btn {
+    margin-top: 30px;
+  }
+}
+
+/* End Department Area css
+============================================================================================ */
+
+/* Start Popular Courses Area css
+============================================================================================ */
+
+.popular_courses {
+  padding: 120px 0 90px;
+  @media (max-width: 991px) {
+    padding: 60px 0 30px;
+  }
+}
+
+.single_course {
+  margin-bottom: 42px;
+  .course_head {
+    position: relative;
+    overflow: hidden;
+    &.overlay:after {
+      background: #000;
+      opacity: 0.2;
+      z-index: 1;
+    }
+    .authr_meta {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      z-index: 2;
+      span {
+        color: #fff;
+        padding-left: 10px;
+      }
+      img {
+        margin-top: -8px;
+        @include transition();
+      }
+    }
+    img {
+      @include transition();
+    }
+  }
+  .course_content {
+    padding-top: 30px;
+    h4 {
+      a {
+        color: $title-color;
+      }
+    }
+    p {
+      margin: 0;
+    }
+    .course_meta {
+      margin-top: 25px;
+      .meta_info {
+        a {
+          color: $title-color;
+        }
+        i.lnr {
+          padding-right: 5px;
+        }
+        margin-right: 25px;
+      }
+      .price {
+        padding: 10px 24px;
+        font-size: 15px;
+        color: #fff;
+        @extend .gradient-bg;
+        font-weight: 600;
+        font-family: $title-font;
+        box-shadow: 0px 20px 50px rgba(0, 175, 224, 0.2);
+        &.df_color1 {
+          @extend .gradient-bg2;
+          box-shadow: 0px 20px 50px rgba(233, 62, 135, 0.2);
+        }
+        &.df_color2 {
+          @extend .gradient-bg3;
+          box-shadow: 0px 20px 50px rgba(115, 73, 204, 0.2);
+        }
+      }
+    }
+  }
+  &:hover {
+    .course_head {
+      img {
+        transform: scale(1.1);
+        @include transition();
+      }
+    }
+    h4 {
+      a {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+/* End Popular Courses Area css
+============================================================================================ */
+
+/* Start Courses Details Area css
+============================================================================================ */
+
+.course_details_area {
+  .title {
+    font-size: 21px;
+    border: none;
+    cursor: pointer;
+    margin-top: 40px;
+    border-bottom: 1px solid #eeeeee;
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 22px;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      height: 1px;
+      width: 74px;
+      background: #4dbf1c;
+    }
+  }
+}
+
+.course_details_left {
+  .content_wrapper {
+  }
+  .content {
+  }
+  .course_list {
+    margin-bottom: 0;
+    @media (max-width: 575px) {
+      padding-left: 0;
+    }
+    li {
+      list-style: none;
+      margin-bottom: 20px;
+      .primary-btn {
+        background: #f9f9f9;
+        color: $text-color;
+        box-shadow: none;
+        font-size: 12px;
+        &:hover {
+          background: $primary-color;
+          color: #ffffff;
+          box-shadow: 0px 10px 30px rgba(0, 175, 224, 0.3);
+        }
+        @media (max-width: 575px) {
+          min-width: 100px;
+          font-size: 10px;
+          padding: 0 10px;
+        }
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.right-contents {
+  @media (max-width: 991px) {
+    margin-top: 50px;
+  }
+  ul {
+    padding-left: 0;
+    li {
+      list-style: none;
+      background: #f9f9f9;
+      padding: 10px 22px;
+      margin-bottom: 10px;
+      a {
+        color: $text-color;
+        text-align: left;
+        p {
+          margin-bottom: 0px;
+        }
+      }
+      .or {
+        color: $title-color;
+      }
+    }
+  }
+  .enroll {
+    margin-top: 10px;
+    width: 100%;
+  }
+  .reviews {
+    span,
+    .star {
+      width: 31%;
+      margin-bottom: 10px;
+    }
+  }
+  .avg-review {
+    background: #04091e;
+    text-align: center;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 20px 0px;
+    span {
+      font-size: 18px;
+      color: $primary-color;
+    }
+    @media (max-width: 991px) {
+      margin-bottom: 20px;
+    }
+  }
+  .single-reviews {
+    .thumb {
+      @media (max-width: 1024px) {
+        margin-right: 10px;
+      }
+    }
+    h5 {
+      display: inline-flex;
+      @media (max-width: 1024px) {
+        display: block;
+      }
+      .star {
+        margin-left: 10px;
+        @media (max-width: 1024px) {
+          margin: 10px 0;
+        }
+      }
+    }
+  }
+  .feedeback {
+    margin-top: 30px;
+    textarea {
+      resize: none;
+      height: 130px;
+      background: #f1f9ff;
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+  .star {
+    .checked {
+      color: #4dbf1c;
+    }
+  }
+  .comments-area {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    .star {
+      margin-left: 20px;
+    }
+  }
+}
+
+/* End  Courses Details Area css
+============================================================================================ */
+
+/* Strat Big Features Area css
+============================================================================================ */
+
+.fact_area {
+  position: relative;
+  color: #fff;
+  background-image: url(../../../static/img/features-bg1.jpg);
+  background-size: cover;
+  z-index: 1;
+  padding: 120px 0 90px;
+  @media (max-width: 991px) {
+    padding: 60px 0 30px;
+  }
+  &.overlay:after {
+    background: #000;
+    opacity: 0.6;
+  }
+  .main_title {
+    h2 {
+      color: #fff;
+    }
+  }
+  .col-lg-4:nth-child(5) {
+    .single_fact {
+      margin-top: -129px;
+      @media (max-width: 991px) {
+        margin-top: 0;
+      }
+    }
+  }
+  .col-lg-4:nth-child(4) {
+    .single_fact {
+      @media (max-width: 991px) {
+        margin-top: -100px;
+      }
+      @media (max-width: 767px) {
+        margin-top: 0px;
+      }
+    }
+  }
+  .col-lg-4:nth-child(6) {
+    .single_fact {
+      @media (max-width: 991px) {
+        margin-top: -165px;
+      }
+      @media (max-width: 767px) {
+        margin-top: 0px;
+      }
+    }
+  }
+}
+
+.single_fact {
+  background: rgba(#fff, 0.1);
+  padding: 40px;
+  margin-bottom: 30px;
+  border: 1px solid transparent;
+  @include transition();
+  h4 {
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  p {
+    margin: 0px;
+  }
+  .f_icon {
+    margin-bottom: 30px;
+  }
+  &:hover {
+    border: 1px solid rgba(#fff, 0.3);
+  }
+}
+
+/* End Big Features Area css
+============================================================================================ */
+
+/* Start Testimonial Area css
+============================================================================================ */
+
+.testimonial_area {
+  .owl-thumb-item {
+    margin-right: 20px;
+    position: relative;
+    &:last-child {
+      margin-right: 0;
+    }
+    &.active {
+      .overlay-grad {
+        @extend .gradient-bg;
+        opacity: 0.8;
+      }
+    }
+    .overlay-grad {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      @include transition();
+      cursor: pointer;
+      &:hover,
+      &.active {
+        @extend .gradient-bg;
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.single_testimonial {
+  .testimonial_head {
+    text-align: center;
+    img {
+      margin: 0 auto 40px;
+      width: auto;
+    }
+    h4 {
+      margin-bottom: 10px;
+    }
+    .review {
+      i.fa {
+        color: #ffc000;
+      }
+    }
+  }
+  .testimonial_content {
+    margin-top: 30px;
+    p {
+      font-size: 24px;
+      font-weight: 400;
+      font-style: italic;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+/* End Testimonial Area css
+============================================================================================ */
+
+/* Start Registration Area css
+============================================================================================ */
+
+.registration_area {
+  @extend .gradient-bg;
+}
+
+.clock_sec {
+  color: #fff;
+  h1 {
+    font-size: 42px;
+    color: #fff;
+    @media (max-width: 575px) {
+      font-size: 30px;
+    }
+  }
+  .clockinner {
+    background: rgba(#fff, 0.2);
+    padding: 40px 20px;
+    margin-right: 15px;
+    text-align: center;
+    border: 1px solid #66e9eb;
+    border-radius: 5px;
+    margin-top: 65px;
+    @media (max-width: 767px) {
+      margin: 0 15px;
+      padding: 10px;
+      margin-top: 30px;
+    }
+    @media (max-width: 400px) {
+      margin-right: 0;
+      padding: 10px 5px;
+    }
+    &:last-child {
+      margin-right: 0;
+      @media (max-width: 575px) {
+        margin-right: 15px;
+      }
+    }
+    h1 {
+      font-size: 36px;
+      display: inline-block;
+    }
+  }
+}
+
+.register_form {
+  background: #fff;
+  text-align: center;
+  padding: 40px;
+  @media (max-width: 991px) {
+    margin-top: 30px;
+  }
+  h3 {
+    font-size: 24px;
+    margin-bottom: 0;
+  }
+  input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #eeeeee;
+    padding: 12px;
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    @include placeholder {
+      color: #aaaaaa;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: $primary-font;
+    }
+  }
+  .primary-btn {
+    width: 100%;
+    border-radius: 0;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 30px;
+  }
+}
+
+/* End Registration Area css
+============================================================================================ */
+
+/* Start Event Area css
+============================================================================================ */
+
+.events_area {
+  padding: 120px 0 90px;
+  @media (max-width: 991px) {
+    padding: 60px 0 30px;
+  }
+}
+
+.single_event {
+  margin-bottom: 30px;
+  .event_thumb {
+    overflow: hidden;
+    img {
+      @include transition();
+    }
+  }
+  .event_details {
+    h4 {
+      margin-bottom: 15px;
+      a {
+        color: $title-color;
+      }
+    }
+  }
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+    h4 {
+      a {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+/* End Event Area css
+============================================================================================ */
+
+/* Start Instructor Area css
+============================================================================================ */
+
+.instructors_area {
+  padding: 120px 0 90px;
+  @media (max-width: 991px) {
+    padding: 60px 0 30px;
+  }
+}
+
+.single_instructor {
+  text-align: center;
+  margin-bottom: 30px;
+  .author_decs {
+    box-shadow: 0 0 50px rgba(153, 153, 153, 0.1);
+    background: #fff;
+    padding: 40px;
+    margin-top: -30px;
+    @include transition();
+    .social_icons {
+      margin-top: 20px;
+      a {
+        color: #cccccc;
+        padding-right: 10px;
+        @include transition();
+        &:hover {
+          color: #772dff;
+        }
+      }
+    }
+    h4 {
+      margin: 20px 0px 0px;
+    }
+    .profession {
+      margin-bottom: 15px;
+    }
+    p {
+      margin: 0px;
+    }
+  }
+  &:hover {
+    .author_decs {
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+/* End Instructor Area css
+============================================================================================ */
