@@ -35,20 +35,35 @@
 	<script src="{% static 'js/gmaps.min.js'%}"></script>
 	<script src="{% static 'js/theme.js'%}"></script>
 <script type="text/javascript">
+
+$(document).on('submit',".logout",function(event){
+    event.preventDefault();     //
+    console.log("logging outttttt");
+    $.ajax({                     //
+     type:'GET',
+     url:'/logout/'        //this function called
+    })
+});
+
 $(document).on('submit',".course_record",function (even) {
-    even.preventDefault();
+    even.preventDefault();  //so that page is not reloaded
     console.log("hi");
+    //
     $.ajax({
         type:'GET',
         url:'/record/',
+
         data:{
-            atitle:$('#Course_title').text(),
-            alevel:$('#Course_level').text(),
-            arating:$('#Course_rating').text(),
-            csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+            atitle:$(this).find('#Course_title').text(),    // #Course_title are ideas for fetching data
+            alevel:$(this).find('#Course_level').text(),
+            arating:$(this).find('#Course_rating').text(),
+           csrfmiddlewaretoken:$(this).find('input[name=csrfmiddlewaretoken]').val()
+
         },
-        sucess:function () {
+        cache:false,
+        success:function () {
             alert("created the ajax form");
+
         }
     });
 });
@@ -79,10 +94,9 @@ $(document).on('submit',".course_record",function (even) {
 
 
                         {% if message  %}
-                            <form method="get"  action=" logout ">
+                            <form method="get"  class="logout">
                         <h4 class="text-uppercase">{{ message }}</h4>&nbsp;&nbsp;&nbsp;
-
-                                <button class="btn btn-info form-control" type="submit"><a href="">Logout</a></button>
+                                <button class="btn form-control" type="submit">Logout</button>
                             </form>
                         {% else  %}
                         <a href="userlogin/" class="text-uppercase">Login</a>
@@ -130,7 +144,7 @@ $(document).on('submit',".course_record",function (even) {
                             </li>
                             <li class="nav-item submenu dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
-                                    aria-haspopup="true" aria-expanded="false">Blog</a>
+                                      aria-haspopup="true" aria-expanded="false">Blog</a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                                     <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
@@ -275,12 +289,16 @@ $(document).on('submit',".course_record",function (even) {
                     </div>
                 </div>
             </div>
-
+<div  class="row m-lg-3">
+<!--    for loop of django-->
    {%  for title,detail,link,img,duration,rating,level in test_result  %}
-                    <form method="post" class="course_record">
-                    {% csrf_token %}
-                    <div class="col-lg-3 col-md-6" >
 
+       <div class="col-lg-3 col-md-6" >
+           <form method="post" class="course_record">
+                    <a href="{{ link }}">
+<!--                      {{}} - for getting value from for loop of django-->
+                        {% csrf_token %}
+<!--                       for security-->
                     <div class="single_course">
                         <div class="course_head overlay">
                             <img class="img-fluid w-100" src="{{ img }}" alt="">
@@ -290,26 +308,28 @@ $(document).on('submit',".course_record",function (even) {
                                 <a id="Course_title">{{title}}</a>
                             </h4>
                             <p id="Course_detail">{{ detail }}</p>
+                            <hr>
+                            <div>
+                                    <span class="price m-auto" id="Course_level">{{ level }}</span>
+
+                                    <hr><span class="bg-light"><button class="btn btn-info" type="submit"><a href="{{ link }}">View</a></button></span>
+<!-- here tracker_storage function will be called from ajax and goes to record url and that runs tracker _storrage and then data stores to mongo db when submit button clicked-->
+                                </div>
                             <div class="course_meta d-flex justify-content-between align-bottom" style="box-shadow: 2px 2px 2px rgba(0,0,0,0.49); float: bottom;">
                                 <div>
                                     <span class="meta_info">
                                         <a href="#"><i class="lnr lnr-user"></i>rating:<p id="Course_rating">{{ rating }}</p></a>
                                     </span>
                                 </div>
-                                 <br>
-                                <hr>
-                                <div>
-                                    <span class="price m-auto" id="Course_level">{{ level }}</span>
-
-                                    <hr><a href="{{ link }}"><span class="bg-light"><button class="btn btn-info" type="submit">View</button></span></a>
-                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-</form>
+                    </a>
+            </form>
+       </div>
    {% endfor %}
+</div>
+        <!--above part is for diplaying course========-->
         </div>
     </div>
     <!--================ End Popular Courses Area =================-->

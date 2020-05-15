@@ -18,15 +18,20 @@ from django.contrib import admin
 from googleproject import  views
 from django.urls import path
 
+from django.conf.urls import url
+from django.contrib import admin
+from googleproject import  views
+from django.urls import path
+
 urlpatterns = [
 
     url(r'^$',views.index,name='index'),
     url(r'^index/',views.index,name='index'),
-    url(r'^userlogin/',views.user_login,name='userlogin'),
-    url(r'^admin/', admin.site.urls),
-    url(r'^logout/',views.logout,name='logout'),
-    url(r'^signup/',views.user_signup,name='signup'),
-    url(r'^record/',views.tracker_storage,name='tracker_storage'),
+    url(r'^userlogin/$',views.user_login,name='userlogin'),
+    url(r'^admin/$', admin.site.urls),
+    url(r'^logout/$',views.logout,name='logout'),
+    url(r'^signup/$',views.user_signup,name='signup'),
+    url(r'^record/$',views.tracker_storage,name='tracker_storage'),
 ]
 
 
