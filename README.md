@@ -1,5 +1,7 @@
 # CourseCollocationPlatform
 A web  based platform that solves the problems faced by elearners of any age 
+
+
 IDEA: to track the user activity on the portal of what courses user is searching and recording 
 the details on a non sql mongodb database and when the user logsout the data is processed by a algorithm 
 summarize the search results .then the search results are stored in a cookie in the browser.
