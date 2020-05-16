@@ -38,7 +38,7 @@
 
 $(document).on('submit',".logout",function(event){
     event.preventDefault();     //
-    console.log("logging outttttt");
+    
     $.ajax({                     //
      type:'GET',
      url:'/logout/'        //this function called
@@ -47,7 +47,7 @@ $(document).on('submit',".logout",function(event){
 
 $(document).on('submit',".course_record",function (even) {
     even.preventDefault();  //so that page is not reloaded
-    console.log("hi");
+  
     //
     $.ajax({
         type:'GET',
