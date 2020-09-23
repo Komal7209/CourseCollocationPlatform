@@ -1,9 +1,14 @@
 # CourseCollocationPlatform
 A web  based platform that solves the problems faced by elearners of any age 
 
+## user behaviour tracking technique 
+Simple Machine Coding
+Self Made Algorithm based project
+
+
 
 IDEA: to track the user activity on the portal of what courses user is searching and recording 
-the details on a non sql mongodb database and when the user logsout the data is processed by a algorithm 
+the details on a non sql mongodb database and when the user logs out the data is processed by a algorithm 
 summarize the search results .then the search results are stored in a cookie in the browser.
 when the user logins again the cookie is searched and the data of cookie is used to show some favourable 
 results to user.
