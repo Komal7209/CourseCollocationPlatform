@@ -39,9 +39,9 @@ results to user.
 
 4. When ever the user clicks on a course the submit button runs and javascript event handler runs on **courses.html page**
    It prevents default reload behaviour and calls an AJAX FUNCTION() containg this info:
-    '''
+    ```
     (type:"GET" , url:"/record/", data: title,rating,link,level  is sent with ajax)
-    '''
+    ```
    This calls the [tracker_storage() function in views.py page] this function:
 		~ creates a connection with the mongo db database </br>
 		~ takes the data sent with ajax request and apeends in the specific collection for user
