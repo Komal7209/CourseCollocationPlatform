@@ -36,7 +36,36 @@
 	<script src="{% static 'js/gmaps.min.js'%}"></script>
 	<script src="{% static 'js/theme.js'%}"></script>
 </head>
+<script type="text/javascript">
+    $(document).on('submit',"#search",function (event) {
+   
+   console.log("search_index");
+   $.ajax({
+       type:'GET',
+       url:'/search/',
+       data:{
+           search_word:$(this).find('#search_input').val()
+       },
+       success:function (){
+           console.log("searched");
+       }
+   });
+});
+    $(document).on('submit',"#search_main",function (event) {
 
+   console.log("searched_main1");
+   $.ajax({
+       type:'GET',
+       url:'/search/',
+       data:{
+           search_word:$(this).find('#search_main_input').val()
+       },
+       success:function (){
+           console.log("searched_main2");
+       }
+   });
+});
+</script>
 <body>
 
 	<!--================ Start Header Menu Area =================-->
@@ -59,7 +88,8 @@
 						</a>
 					</div>
 					<div class="col-lg-6 col-sm-6 col-8 header-top-right">
-                        <a href="userlogin/" class="text-uppercase">Login</a>
+                         <a class="text-uppercase"  onclick="location.href='{% url 'userlogin' %}'" >Login</a>
+                   <!--     <a href="userlogin/" class="text-uppercase">Login</a>-->
 					</div>
 				</div>
 			</div>
@@ -68,7 +98,7 @@
 		<div class="main_menu">
 			<div class="search_input" id="search_input_box">
 				<div class="container">
-					<form class="d-flex justify-content-between" method="get" action="">
+					<form class="d-flex justify-content-between" method="get" id="search" action="">
 						<input type="text" class="form-control" id="search_input" name="search1" placeholder="Search Here">
 						<button type="submit" class="btn"></button>
 						<span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
@@ -89,26 +119,26 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav ml-auto">
-							<li class="nav-item active"><a class="nav-link" href="index/">Home</a></li>
-							<li class="nav-item"><a class="nav-link" href="signup/">Signup</a></li>
+							<li class="nav-item active"><a  class="nav-link" onclick="location.href='{% url 'index' %}'" >Index</a></li>
+							<li class="nav-item"><a class="nav-link"   onclick="location.href='{% url 'signup' %}'" >SignUp</a></li>
 							<li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Pages</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="courses/">Courses</a></li>
-									<li class="nav-item"><a class="nav-link" href="course-details.html">Course Details</a></li>
-									<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
+									<li class="nav-item"><a  class="nav-link" onclick="location.href='{% url 'userlogin' %}'" >Login</a></li>
+									<li class="nav-item"><a class="nav-link" href="#">Course Details</a></li>
+									<li class="nav-item"><a class="nav-link" href="#">Elements</a></li>
 								</ul>
 							</li>
 							<li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Blog</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-									<li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
+									<li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+									<li class="nav-item"><a class="nav-link" href="#">Blog Details</a></li>
 								</ul>
 							</li>
-							<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
 							<li class="nav-item">
 								<a href="#" class="nav-link search" id="search">
 									<i class="lnr lnr-magnifier"></i>
@@ -139,8 +169,8 @@
 								the space telescope known as the Hubble.
 							</p>
 							<div class="search_course_wrap">
-								<form action="get" class="form_box d-flex justify-content-between w-100">
-									<input type="text" placeholder="Search Courses" class="form-control" name="search" onfocus="this.placeholder = ''"
+								<form method="get" id="search_main" class="form_box d-flex justify-content-between w-100">
+									<input type="text" placeholder="Search Courses" id="search_main_input" class="form-control" name="search" onfocus="this.placeholder = ''"
 									 onblur="this.placeholder = 'Search Courses'">
 									<button type="submit" class="btn search_course_btn">Search</button>
 								</form>

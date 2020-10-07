@@ -1,0 +1,14 @@
+asgiref @ file:///tmp/build/80754af9/asgiref_1594338739818/work
+beautifulsoup4==4.9.3
+Brotli==1.0.9
+bs4==0.0.1
+certifi==2020.6.20
+Django @ file:///tmp/build/80754af9/django_1601563330930/work
+dnspython==2.0.0
+psycopg2 @ file:///C:/ci/psycopg2_1594305209841/work
+pymongo==3.11.0
+pytz==2020.1
+soupsieve==2.0.1
+sqlparse==0.3.1
+whitenoise==5.2.0
+wincertstore==0.2
