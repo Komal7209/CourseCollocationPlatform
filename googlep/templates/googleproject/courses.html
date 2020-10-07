@@ -62,10 +62,23 @@ $(document).on('submit',".course_record",function (even) {
         },
         cache:false,
         success:function () {
-            alert("created the ajax form");
+            console.log("created the ajax form");
 
         }
     });
+});
+$(document).on('submit',"#search",function (event) {
+   event.preventDefault();
+   $.ajax({
+       type:'GET',
+       url:'/search/',
+       data:{
+           search_word:$(this).find('#search_input').val()
+       },
+       success:function (){
+           console.log("searched");
+       }
+   });
 });
 </script>
 <body>
@@ -94,12 +107,12 @@ $(document).on('submit',".course_record",function (even) {
 
 
                         {% if message  %}
-                            <form method="get"  class="logout">
-                        <h4 class="text-uppercase">{{ message }}</h4>&nbsp;&nbsp;&nbsp;
-                                <button class="btn form-control" type="submit">Logout</button>
-                            </form>
+
+                        <h4 class="text-uppercase bg-light">{{ message }}</h4>&nbsp;&nbsp;&nbsp;
+                               <!-- <button class="btn form-control" type="submit">Logout</button>-->
+                            <a  class="text-uppercase" onclick="location.href='{% url 'logout' %}'" >logout</a>
                         {% else  %}
-                        <a href="userlogin/" class="text-uppercase">Login</a>
+                        <a class="text-uppercase" onclick="location.href='{% url 'userlogin' %}'" >Login</a>
                         {% endif %}
 
                     </div>
@@ -110,7 +123,7 @@ $(document).on('submit',".course_record",function (even) {
         <div class="main_menu">
             <div class="search_input" id="search_input_box">
                 <div class="container">
-                    <form class="d-flex justify-content-between" method="get" action="">
+                    <form class="d-flex justify-content-between" id="search" method="get" action="">
                         <input type="text" class="form-control" name="search1" id="search_input" placeholder="Search Here">
                         <button type="submit" class="btn"></button>
                         <span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
@@ -131,26 +144,26 @@ $(document).on('submit',".course_record",function (even) {
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item"><a class="nav-link" href="index/">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li>
+                            <li class="nav-item"><a  class="nav-link" onclick="location.href='{% url 'index' %}'" >Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
                             <li class="nav-item submenu dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
                                     aria-haspopup="true" aria-expanded="false">Pages</a>
                                 <ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="nav-link" href="courses/">Courses</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="course-details.html">Course Details</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Courses</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Course Details</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Elements</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item submenu dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
                                       aria-haspopup="true" aria-expanded="false">Blog</a>
                                 <ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Blog Details</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link search" id="search">
                                     <i class="lnr lnr-magnifier"></i>
@@ -296,7 +309,7 @@ $(document).on('submit',".course_record",function (even) {
        <div class="col-lg-3 col-md-6" >
            <form method="post" class="course_record">
                     <a href="{{ link }}">
-<!--                      {{}} - for getting value from for loop of django-->
+<!--                      - for getting value from for loop of django-->
                         {% csrf_token %}
 <!--                       for security-->
                     <div class="single_course">

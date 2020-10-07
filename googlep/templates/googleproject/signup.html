@@ -47,7 +47,7 @@
                         <button class="btn btn-info form-control">Logout</button>
 
                         {% else  %}
-                        <a href="userlogin/" class="text-uppercase">Login</a>
+                        <a onclick="location.href='{% url 'userlogin' %}'" class="text-uppercase">Login</a>
                         {% endif %}
 
                     </div>
@@ -79,26 +79,26 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item"><a class="nav-link" href="index/">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li>
+                            <li class="nav-item"><a class="nav-link" onclick="location.href='{% url 'index' %}'">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
                             <li class="nav-item submenu dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
                                     aria-haspopup="true" aria-expanded="false">Pages</a>
                                 <ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="nav-link" href="courses/">Courses</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="course-details.html">Course Details</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
+                                    <li class="nav-item"><a class="nav-link" onclick="location.href='{% url 'userlogin' %}'">Courses</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Course Details</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Elements</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item submenu dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
                                     aria-haspopup="true" aria-expanded="false">Blog</a>
                                 <ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Blog Details</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link search" id="search">
                                     <i class="lnr lnr-magnifier"></i>
@@ -124,13 +124,13 @@
             <form method="post" >
            <div class="container row bg-light p-lg-3 ml-lg-5">
                <label class="col-md-6 text-right">Email</label>
-               <input type="text" class="col-md-6 form-control" name="email"><br><br><br>
+               <input type="text" class="col-md-6 form-control" id="email" name="email"><br><br><br>
                <label class="col-md-6 text-right">Password</label>
-               <input type="password" class="col-md-6 form-control" name="password"><br><br><br>
+               <input type="password" class="col-md-6 form-control" id="password" name="password"><br><br><br>
                <label class="col-md-6 text-right">Confirm Password</label>
-               <input type="password" class="col-md-6 form-control" name="confirmpassword"><br><br><br>
+               <input type="password" class="col-md-6 form-control" id="confirmpassword" name="confirmpassword"><br><br><br>
                <label class="col-md-6 text-right">Mobile</label>
-               <input type="number" class="col-md-6 form-control" name="mobile"><br><br><br>
+               <input type="number" class="col-md-6 form-control" id="mobile1" name="mobile1"><br><br><br>
                <input type="submit" class="col-md-4 offset-3 info btn btn-primary"><br><br>
 
            </div>
